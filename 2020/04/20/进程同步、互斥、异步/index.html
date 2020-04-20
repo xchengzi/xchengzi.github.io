@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="第一章内容  第二章内容  ##参考文献 www.xchengzi.cn">
+  <meta name="description" content="1.1 同步与互斥​            并发进程之间的制约关系有两种，即互斥和同步 1.1.1 互斥 多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。  1.1.2 同步 在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。   1.2 异步 异步与同步是相对的： 同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客文章">
-<meta property="og:url" content="http://yoursite.com/2020/04/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="进程同步、互斥、异步">
+<meta property="og:url" content="http://yoursite.com/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/index.html">
 <meta property="og:site_name" content="程序橙的博客">
-<meta property="og:description" content="第一章内容  第二章内容  ##参考文献 www.xchengzi.cn">
+<meta property="og:description" content="1.1 同步与互斥​            并发进程之间的制约关系有两种，即互斥和同步 1.1.1 互斥 多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。  1.1.2 同步 在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。   1.2 异步 异步与同步是相对的： 同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-01T10:02:06.000Z">
-<meta property="article:modified_time" content="2020-04-10T10:52:14.320Z">
+<meta property="article:published_time" content="2020-04-20T01:38:05.399Z">
+<meta property="article:modified_time" content="2020-04-20T01:58:35.045Z">
 <meta property="article:author" content="程序橙">
-<meta property="article:tag" content="第一篇">
+<meta property="article:tag" content="进程">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+<link rel="canonical" href="http://yoursite.com/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>我的第一篇博客文章 | 程序橙的博客</title>
+  <title>进程同步、互斥、异步 | 程序橙的博客</title>
   
 
 
@@ -135,7 +135,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">1</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kotoko99.jpg">
@@ -214,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          我的第一篇博客文章
+          进程同步、互斥、异步
         </h1>
 
         <div class="post-meta">
@@ -223,23 +223,17 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-01 18:02:06" itemprop="dateCreated datePublished" datetime="2020-04-01T18:02:06+08:00">2020-04-01</time>
+              <time title="创建时间：2020-04-20 09:38:05 / 修改时间：09:58:35" itemprop="dateCreated datePublished" datetime="2020-04-20T09:38:05+08:00">2020-04-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-10 18:52:14" itemprop="dateModified" datetime="2020-04-10T18:52:14+08:00">2020-04-10</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95code/" itemprop="url" rel="index"><span itemprop="name">用于测试code</span></a>
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">操作系统原理</span></a>
                 </span>
             </span>
 
@@ -254,12 +248,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
+        <h2 id="1-1-同步与互斥"><a href="#1-1-同步与互斥" class="headerlink" title="1.1 同步与互斥"></a>1.1 同步与互斥</h2><p>​            并发进程之间的制约关系有两种，即互斥和同步</p>
+<h2 id="1-1-1-互斥"><a href="#1-1-1-互斥" class="headerlink" title="1.1.1 互斥"></a>1.1.1 互斥</h2><blockquote>
+<p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p>
+</blockquote>
+<h2 id="1-1-2-同步"><a href="#1-1-2-同步" class="headerlink" title="1.1.2 同步"></a>1.1.2 同步</h2><blockquote>
+<p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p>
+</blockquote>
 <hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<p>##参考文献</p>
-<p><a href="http://www.xchengzi.cn" target="_blank" rel="noopener">www.xchengzi.cn</a></p>
+<h2 id="1-2-异步"><a href="#1-2-异步" class="headerlink" title="1.2 异步"></a>1.2 异步</h2><blockquote>
+<p>异步与同步是相对的：</p>
+<p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p>
+<p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p>
+</blockquote>
 
     </div>
 
@@ -279,7 +280,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/" rel="tag"><i class="fa fa-tag"></i> 第一篇</i></a>
+              <a href="/tags/%E8%BF%9B%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 进程</i></a>
           </div>
 
         
@@ -350,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章"><span class="nav-number">2.</span> <span class="nav-text">第二章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-同步与互斥"><span class="nav-number">1.</span> <span class="nav-text">1.1 同步与互斥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-1-互斥"><span class="nav-number">2.</span> <span class="nav-text">1.1.1 互斥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-2-同步"><span class="nav-number">3.</span> <span class="nav-text">1.1.2 同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-异步"><span class="nav-number">4.</span> <span class="nav-text">1.2 异步</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
