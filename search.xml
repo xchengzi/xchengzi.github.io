@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>进程同步、互斥、异步</title>
-    <url>/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</url>
-    <content><![CDATA[<h2 id="1-1-同步与互斥"><a href="#1-1-同步与互斥" class="headerlink" title="1.1 同步与互斥"></a>1.1 同步与互斥</h2><p>​            并发进程之间的制约关系有两种，即互斥和同步</p>
-<h2 id="1-1-1-互斥"><a href="#1-1-1-互斥" class="headerlink" title="1.1.1 互斥"></a>1.1.1 互斥</h2><blockquote>
-<p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p>
-</blockquote>
-<h2 id="1-1-2-同步"><a href="#1-1-2-同步" class="headerlink" title="1.1.2 同步"></a>1.1.2 同步</h2><blockquote>
-<p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p>
-</blockquote>
-<hr>
-<h2 id="1-2-异步"><a href="#1-2-异步" class="headerlink" title="1.2 异步"></a>1.2 异步</h2><blockquote>
-<p>异步与同步是相对的：</p>
-<p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p>
-<p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>操作系统原理</category>
-      </categories>
-      <tags>
-        <tag>进程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/04/01/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -46,6 +22,30 @@
       </categories>
       <tags>
         <tag>HelloWorld</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进程同步、互斥、异步</title>
+    <url>/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</url>
+    <content><![CDATA[<h2 id="1-1-同步与互斥"><a href="#1-1-同步与互斥" class="headerlink" title="1.1 同步与互斥"></a>1.1 同步与互斥</h2><p>​            并发进程之间的制约关系有两种，即互斥和同步</p>
+<h2 id="1-1-1-互斥"><a href="#1-1-1-互斥" class="headerlink" title="1.1.1 互斥"></a>1.1.1 互斥</h2><blockquote>
+<p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p>
+</blockquote>
+<h2 id="1-1-2-同步"><a href="#1-1-2-同步" class="headerlink" title="1.1.2 同步"></a>1.1.2 同步</h2><blockquote>
+<p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p>
+</blockquote>
+<hr>
+<h2 id="1-2-异步"><a href="#1-2-异步" class="headerlink" title="1.2 异步"></a>1.2 异步</h2><blockquote>
+<p>异步与同步是相对的：</p>
+<p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p>
+<p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>操作系统原理</category>
+      </categories>
+      <tags>
+        <tag>进程</tag>
       </tags>
   </entry>
 </search>
