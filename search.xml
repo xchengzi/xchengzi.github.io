@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>用于测试code</category>
-      </categories>
-      <tags>
-        <tag>HelloWorld</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>进程同步、互斥、异步</title>
     <url>/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</url>
     <content><![CDATA[<h2 id="1-1-同步与互斥"><a href="#1-1-同步与互斥" class="headerlink" title="1.1 同步与互斥"></a>1.1 同步与互斥</h2><p>​            并发进程之间的制约关系有两种，即互斥和同步</p>
@@ -46,6 +22,22 @@
       </categories>
       <tags>
         <tag>进程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript缓动动画js代码</title>
+    <url>/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/</url>
+    <content><![CDATA[<h1 id="animate（移动对象，目标位置，回调函数）"><a href="#animate（移动对象，目标位置，回调函数）" class="headerlink" title="animate（移动对象，目标位置，回调函数）"></a>animate（移动对象，目标位置，回调函数）</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
+<p>​            // 速度越来越慢<br>​            // 1 移动距离越来越小<br>​            // 2 设置步长 （目标位置-当前位置）/10<br>​            // 3 步长每次不一样，写在定时器里</p>
+</blockquote>
+<h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function animate(obj,target,callback)&#123;</span><br><span class="line">		clearInterval(obj.timer)</span><br><span class="line">		obj.timer&#x3D;setInterval(function()&#123;</span><br><span class="line">        </span><br><span class="line">			var step&#x3D;(target-obj.offsetLeft)&#x2F;10</span><br><span class="line">			step&#x3D; step&gt;0 ? Math.ceil(step) : Math.floor(step)</span><br><span class="line">			if(obj.offsetLeft&#x3D;&#x3D;target)&#123;</span><br><span class="line">				clearInterval(obj.timer)</span><br><span class="line">&#x2F;&#x2F;				if(callback)&#123;</span><br><span class="line">&#x2F;&#x2F;					callback()</span><br><span class="line">&#x2F;&#x2F;				&#125;</span><br><span class="line">				callback&amp;&amp;callback();</span><br><span class="line">			&#125;</span><br><span class="line">			obj.style.left&#x3D;obj.offsetLeft+step+&#39;px&#39;</span><br><span class="line">		&#125;,15)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>js运动</tag>
       </tags>
   </entry>
 </search>

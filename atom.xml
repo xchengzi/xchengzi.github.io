@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-20T01:58:35.045Z</updated>
+  <updated>2020-04-22T07:52:58.459Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript缓动动画js代码</title>
+    <link href="http://yoursite.com/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/"/>
+    <id>http://yoursite.com/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/</id>
+    <published>2020-04-22T07:44:51.649Z</published>
+    <updated>2020-04-22T07:52:58.459Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="animate（移动对象，目标位置，回调函数）"><a href="#animate（移动对象，目标位置，回调函数）" class="headerlink" title="animate（移动对象，目标位置，回调函数）"></a>animate（移动对象，目标位置，回调函数）</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote><p>​            // 速度越来越慢<br>​            // 1 移动距离越来越小<br>​            // 2 设置步长 （目标位置-当前位置）/10<br>​            // 3 步长每次不一样，写在定时器里</p></blockquote><h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function animate(obj,target,callback)&#123;</span><br><span class="line">clearInterval(obj.timer)</span><br><span class="line">obj.timer&#x3D;setInterval(function()&#123;</span><br><span class="line">        </span><br><span class="line">var step&#x3D;(target-obj.offsetLeft)&#x2F;10</span><br><span class="line">step&#x3D; step&gt;0 ? Math.ceil(step) : Math.floor(step)</span><br><span class="line">if(obj.offsetLeft&#x3D;&#x3D;target)&#123;</span><br><span class="line">clearInterval(obj.timer)</span><br><span class="line">&#x2F;&#x2F;if(callback)&#123;</span><br><span class="line">&#x2F;&#x2F;callback()</span><br><span class="line">&#x2F;&#x2F;&#125;</span><br><span class="line">callback&amp;&amp;callback();</span><br><span class="line">&#125;</span><br><span class="line">obj.style.left&#x3D;obj.offsetLeft+step+&#39;px&#39;</span><br><span class="line">&#125;,15)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;animate（移动对象，目标位置，回调函数）&quot;&gt;&lt;a href=&quot;#animate（移动对象，目标位置，回调函数）&quot; class=&quot;headerlink&quot; title=&quot;animate（移动对象，目标位置，回调函数）&quot;&gt;&lt;/a&gt;animate（移动对象，目标位置
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
+    
+    
+      <category term="js运动" scheme="http://yoursite.com/tags/js%E8%BF%90%E5%8A%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>进程同步、互斥、异步</title>
@@ -40,32 +66,6 @@
     
     
       <category term="进程" scheme="http://yoursite.com/tags/%E8%BF%9B%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/04/01/hello-world/"/>
-    <id>http://yoursite.com/2020/04/01/hello-world/</id>
-    <published>2020-04-01T09:55:13.855Z</published>
-    <updated>2020-04-10T10:51:19.031Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-      <category term="用于测试code" scheme="http://yoursite.com/categories/%E7%94%A8%E4%BA%8E%E6%B5%8B%E8%AF%95code/"/>
-    
-    
-      <category term="HelloWorld" scheme="http://yoursite.com/tags/HelloWorld/"/>
     
   </entry>
   
