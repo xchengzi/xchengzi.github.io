@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-22T07:52:58.459Z</updated>
+  <updated>2020-05-10T11:31:56.211Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,20 @@
     <link href="http://yoursite.com/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/"/>
     <id>http://yoursite.com/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/</id>
     <published>2020-04-22T07:44:51.649Z</published>
-    <updated>2020-04-22T07:52:58.459Z</updated>
+    <updated>2020-05-10T11:31:56.211Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="animate（移动对象，目标位置，回调函数）"><a href="#animate（移动对象，目标位置，回调函数）" class="headerlink" title="animate（移动对象，目标位置，回调函数）"></a>animate（移动对象，目标位置，回调函数）</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote><p>​            // 速度越来越慢<br>​            // 1 移动距离越来越小<br>​            // 2 设置步长 （目标位置-当前位置）/10<br>​            // 3 步长每次不一样，写在定时器里</p></blockquote><h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function animate(obj,target,callback)&#123;</span><br><span class="line">clearInterval(obj.timer)</span><br><span class="line">obj.timer&#x3D;setInterval(function()&#123;</span><br><span class="line">        </span><br><span class="line">var step&#x3D;(target-obj.offsetLeft)&#x2F;10</span><br><span class="line">step&#x3D; step&gt;0 ? Math.ceil(step) : Math.floor(step)</span><br><span class="line">if(obj.offsetLeft&#x3D;&#x3D;target)&#123;</span><br><span class="line">clearInterval(obj.timer)</span><br><span class="line">&#x2F;&#x2F;if(callback)&#123;</span><br><span class="line">&#x2F;&#x2F;callback()</span><br><span class="line">&#x2F;&#x2F;&#125;</span><br><span class="line">callback&amp;&amp;callback();</span><br><span class="line">&#125;</span><br><span class="line">obj.style.left&#x3D;obj.offsetLeft+step+&#39;px&#39;</span><br><span class="line">&#125;,15)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote><p>animate（移动对象，目标位置，回调函数）</p><p>animate ( obj , target , callback )</p></blockquote><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote><p>​            // 速度越来越慢<br>​            // 1 移动距离越来越小<br>​            // 2 设置步长 （目标位置-当前位置）/10<br>​            // 3 步长每次不一样，写在定时器里</p></blockquote><h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h2><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function animate(obj,target,callback)&#123;</span><br><span class="line">clearInterval(obj.timer)</span><br><span class="line">obj.timer&#x3D;setInterval(function()&#123;</span><br><span class="line">        </span><br><span class="line">var step&#x3D;(target-obj.offsetLeft)&#x2F;10</span><br><span class="line">step&#x3D; step&gt;0 ? Math.ceil(step) : Math.floor(step)</span><br><span class="line">if(obj.offsetLeft&#x3D;&#x3D;target)&#123;</span><br><span class="line">clearInterval(obj.timer)</span><br><span class="line">&#x2F;&#x2F;if(callback)&#123;</span><br><span class="line">&#x2F;&#x2F;callback()</span><br><span class="line">&#x2F;&#x2F;&#125;</span><br><span class="line">callback&amp;&amp;callback();</span><br><span class="line">&#125;</span><br><span class="line">obj.style.left&#x3D;obj.offsetLeft+step+&#39;px&#39;</span><br><span class="line">&#125;,15)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;animate（移动对象，目标位置，回调函数）&quot;&gt;&lt;a href=&quot;#animate（移动对象，目标位置，回调函数）&quot; class=&quot;headerlink&quot; title=&quot;animate（移动对象，目标位置，回调函数）&quot;&gt;&lt;/a&gt;animate（移动对象，目标位置
-      
+      &lt;h2 id=&quot;函数&quot;&gt;&lt;a href=&quot;#函数&quot; class=&quot;headerlink&quot; title=&quot;函数&quot;&gt;&lt;/a&gt;函数&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;animate（移动对象，目标位置，回调函数）&lt;/p&gt;
+&lt;p&gt;animate ( obj , target , callback )&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;​            // 速度越来越慢&lt;br&gt;​            // 1 移动距离越来越小&lt;br&gt;​            // 2 设置步长 （目标位置-当前位置）/10&lt;br&gt;​            // 3 步长每次不一样，写在定时器里&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;代码部分&quot;&gt;&lt;a href=&quot;#代码部分&quot; class=&quot;headerlink&quot; title=&quot;代码部分&quot;&gt;&lt;/a&gt;代码部分&lt;/h2&gt;
     
     </summary>
     
@@ -47,17 +51,25 @@
     <link href="http://yoursite.com/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/"/>
     <id>http://yoursite.com/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</id>
     <published>2020-04-20T01:38:05.399Z</published>
-    <updated>2020-04-20T01:58:35.045Z</updated>
+    <updated>2020-05-10T10:52:54.340Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-1-同步与互斥"><a href="#1-1-同步与互斥" class="headerlink" title="1.1 同步与互斥"></a>1.1 同步与互斥</h2><p>​            并发进程之间的制约关系有两种，即互斥和同步</p><h2 id="1-1-1-互斥"><a href="#1-1-1-互斥" class="headerlink" title="1.1.1 互斥"></a>1.1.1 互斥</h2><blockquote><p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p></blockquote><h2 id="1-1-2-同步"><a href="#1-1-2-同步" class="headerlink" title="1.1.2 同步"></a>1.1.2 同步</h2><blockquote><p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p></blockquote><hr><h2 id="1-2-异步"><a href="#1-2-异步" class="headerlink" title="1.2 异步"></a>1.2 异步</h2><blockquote><p>异步与同步是相对的：</p><p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p><p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="同步、互斥、异步"><a href="#同步、互斥、异步" class="headerlink" title="同步、互斥、异步"></a>同步、互斥、异步</h1><h2 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h2><p>​            <strong>并发进程之间的制约关系有两种，即互斥和同步</strong></p><ul><li>互斥</li></ul><blockquote><p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p></blockquote><ul><li>同步</li></ul><blockquote><p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p></blockquote><a id="more"></a><h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><blockquote><p>异步与同步是相对的：</p><p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p><p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p></blockquote>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;1-1-同步与互斥&quot;&gt;&lt;a href=&quot;#1-1-同步与互斥&quot; class=&quot;headerlink&quot; title=&quot;1.1 同步与互斥&quot;&gt;&lt;/a&gt;1.1 同步与互斥&lt;/h2&gt;&lt;p&gt;​            并发进程之间的制约关系有两种，即互斥和同步&lt;/p&gt;
-&lt;h2
-      
+      &lt;h1 id=&quot;同步、互斥、异步&quot;&gt;&lt;a href=&quot;#同步、互斥、异步&quot; class=&quot;headerlink&quot; title=&quot;同步、互斥、异步&quot;&gt;&lt;/a&gt;同步、互斥、异步&lt;/h1&gt;&lt;h2 id=&quot;同步与互斥&quot;&gt;&lt;a href=&quot;#同步与互斥&quot; class=&quot;headerlink&quot; title=&quot;同步与互斥&quot;&gt;&lt;/a&gt;同步与互斥&lt;/h2&gt;&lt;p&gt;​            &lt;strong&gt;并发进程之间的制约关系有两种，即互斥和同步&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;互斥&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;同步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
