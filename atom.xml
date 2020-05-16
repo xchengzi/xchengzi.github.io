@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-16T13:48:06.354Z</updated>
+  <updated>2020-05-16T13:50:57.570Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,13 @@
     <link href="http://yoursite.com/2020/05/16/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2020/05/16/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/</id>
     <published>2020-05-16T13:34:13.888Z</published>
-    <updated>2020-05-16T13:48:06.354Z</updated>
+    <updated>2020-05-16T13:50:57.570Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title:解决Ubuntu14.04联网问题<br>tags:Ubuntu<br>categories:Linux</p><hr><h1 id="Ubuntu14-04-不能上网解决方法之一"><a href="#Ubuntu14-04-不能上网解决方法之一" class="headerlink" title="Ubuntu14.04 不能上网解决方法之一"></a>Ubuntu14.04 不能上网解决方法之一</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><pre><code>su root</code></pre><ul><li>输入密码后 获得管理员权限</li></ul><p><img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-01.png" alt=""></p><a id="more"></a><h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><pre><code>vi etc/NetworkManager/Networkmanager.conf</code></pre><ul><li><p>按<code>i</code> (或者<code>a</code>、<code>o</code>) 进入编辑模式</p></li><li><p>修改  <code>managed=true</code></p></li><li><p>按键按 <code>Esc</code></p></li><li><p>退出编辑模式  键盘输入<code>:wq</code> 即可保存并退出</p><p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-02.png" alt="图2"></p></li></ul><p>  ​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-03.png" alt="图3"></p><h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><pre><code>vi etc/network/interfaces</code></pre><ul><li>将 <code>static</code> 修改为 <code>dhcp</code></li></ul><p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-04.png" alt="图4"><br>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-05.png" alt="图5"></p><h2 id="第四步-重启客户端"><a href="#第四步-重启客户端" class="headerlink" title="第四步 重启客户端"></a>第四步 重启客户端</h2><ul><li>指令 <code>reboot</code></li></ul><h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><ul><li><p>打开浏览器 输入网址 回车</p><p><strong>大功告成！！！</strong></p></li></ul><p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-06.png" alt="图6"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Ubuntu14-04-不能上网解决方法之一"><a href="#Ubuntu14-04-不能上网解决方法之一" class="headerlink" title="Ubuntu14.04 不能上网解决方法之一"></a>Ubuntu14.04 不能上网解决方法之一</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><pre><code>su root</code></pre><ul><li>输入密码后 获得管理员权限</li></ul><p><img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-01.png" alt=""></p><a id="more"></a><h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><pre><code>vi etc/NetworkManager/Networkmanager.conf</code></pre><ul><li><p>按<code>i</code> (或者<code>a</code>、<code>o</code>) 进入编辑模式</p></li><li><p>修改  <code>managed=true</code></p></li><li><p>按键按 <code>Esc</code></p></li><li><p>退出编辑模式  键盘输入<code>:wq</code> 即可保存并退出</p><p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-02.png" alt="图2"></p></li></ul><p>  ​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-03.png" alt="图3"></p><h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><pre><code>vi etc/network/interfaces</code></pre><ul><li>将 <code>static</code> 修改为 <code>dhcp</code></li></ul><p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-04.png" alt="图4"><br>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-05.png" alt="图5"></p><h2 id="第四步-重启客户端"><a href="#第四步-重启客户端" class="headerlink" title="第四步 重启客户端"></a>第四步 重启客户端</h2><ul><li>指令 <code>reboot</code></li></ul><h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><ul><li><p>打开浏览器 输入网址 回车</p><p><strong>大功告成！！！</strong></p></li></ul><p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-06.png" alt="图6"></p>]]></content>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;p&gt;title:解决Ubuntu14.04联网问题&lt;br&gt;tags:Ubuntu&lt;br&gt;categories:Linux&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;Ubuntu14-04-不能上网解决方法之一&quot;&gt;&lt;a href=&quot;#Ubuntu14-04-不能上网解决方法之一&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu14.04 不能上网解决方法之一&quot;&gt;&lt;/a&gt;Ubuntu14.04 不能上网解决方法之一&lt;/h1&gt;&lt;h2 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;su root&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+      &lt;h1 id=&quot;Ubuntu14-04-不能上网解决方法之一&quot;&gt;&lt;a href=&quot;#Ubuntu14-04-不能上网解决方法之一&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu14.04 不能上网解决方法之一&quot;&gt;&lt;/a&gt;Ubuntu14.04 不能上网解决方法之一&lt;/h1&gt;&lt;h2 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;su root&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;输入密码后 获得管理员权限&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&quot;/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-01.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -38,6 +35,10 @@
     </summary>
     
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
     
   </entry>
   
