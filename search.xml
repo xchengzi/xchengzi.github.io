@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>javascript缓动动画js代码</title>
-    <url>/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
-<p>animate（移动对象，目标位置，回调函数）</p>
-<p>animate ( obj , target , callback )</p>
-</blockquote>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
-<p>​            // 速度越来越慢<br>​            // 1 移动距离越来越小<br>​            // 2 设置步长 （目标位置-当前位置）/10<br>​            // 3 步长每次不一样，写在定时器里</p>
-</blockquote>
-<h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h2><a id="more"></a>
+    <title>解决Ubuntu14.04联网问题</title>
+    <url>/2020/05/16/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<hr>
+<p>title:解决Ubuntu14.04联网问题<br>tags:Ubuntu<br>categories:Linux</p>
+<hr>
+<h1 id="Ubuntu14-04-不能上网解决方法之一"><a href="#Ubuntu14-04-不能上网解决方法之一" class="headerlink" title="Ubuntu14.04 不能上网解决方法之一"></a>Ubuntu14.04 不能上网解决方法之一</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><pre><code>su root</code></pre><ul>
+<li>输入密码后 获得管理员权限</li>
+</ul>
+<p><img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-01.png" alt=""></p>
+<a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function animate(obj,target,callback)&#123;</span><br><span class="line">		clearInterval(obj.timer)</span><br><span class="line">		obj.timer&#x3D;setInterval(function()&#123;</span><br><span class="line">        </span><br><span class="line">			var step&#x3D;(target-obj.offsetLeft)&#x2F;10</span><br><span class="line">			step&#x3D; step&gt;0 ? Math.ceil(step) : Math.floor(step)</span><br><span class="line">			if(obj.offsetLeft&#x3D;&#x3D;target)&#123;</span><br><span class="line">				clearInterval(obj.timer)</span><br><span class="line">&#x2F;&#x2F;				if(callback)&#123;</span><br><span class="line">&#x2F;&#x2F;					callback()</span><br><span class="line">&#x2F;&#x2F;				&#125;</span><br><span class="line">				callback&amp;&amp;callback();</span><br><span class="line">			&#125;</span><br><span class="line">			obj.style.left&#x3D;obj.offsetLeft+step+&#39;px&#39;</span><br><span class="line">		&#125;,15)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><pre><code>vi etc/NetworkManager/Networkmanager.conf</code></pre><ul>
+<li><p>按<code>i</code> (或者<code>a</code>、<code>o</code>) 进入编辑模式</p>
+</li>
+<li><p>修改  <code>managed=true</code></p>
+</li>
+<li><p>按键按 <code>Esc</code></p>
+</li>
+<li><p>退出编辑模式  键盘输入<code>:wq</code> 即可保存并退出</p>
+<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-02.png" alt="图2"></p>
+</li>
+</ul>
+<p>  ​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-03.png" alt="图3"></p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><pre><code>vi etc/network/interfaces</code></pre><ul>
+<li>将 <code>static</code> 修改为 <code>dhcp</code></li>
+</ul>
+<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-04.png" alt="图4"><br>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-05.png" alt="图5"></p>
+<h2 id="第四步-重启客户端"><a href="#第四步-重启客户端" class="headerlink" title="第四步 重启客户端"></a>第四步 重启客户端</h2><ul>
+<li>指令 <code>reboot</code></li>
+</ul>
+<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><ul>
+<li><p>打开浏览器 输入网址 回车</p>
+<p><strong>大功告成！！！</strong></p>
+</li>
+</ul>
+<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-06.png" alt="图6"></p>
 ]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>js运动</tag>
-      </tags>
   </entry>
   <entry>
     <title>进程同步、互斥、异步</title>
@@ -51,6 +68,28 @@
       </categories>
       <tags>
         <tag>进程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript缓动动画js代码</title>
+    <url>/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
+<p>animate（移动对象，目标位置，回调函数）</p>
+<p>animate ( obj , target , callback )</p>
+</blockquote>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
+<p>​            // 速度越来越慢<br>​            // 1 移动距离越来越小<br>​            // 2 设置步长 （目标位置-当前位置）/10<br>​            // 3 步长每次不一样，写在定时器里</p>
+</blockquote>
+<h2 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h2><a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function animate(obj,target,callback)&#123;</span><br><span class="line">		clearInterval(obj.timer)</span><br><span class="line">		obj.timer&#x3D;setInterval(function()&#123;</span><br><span class="line">        </span><br><span class="line">			var step&#x3D;(target-obj.offsetLeft)&#x2F;10</span><br><span class="line">			step&#x3D; step&gt;0 ? Math.ceil(step) : Math.floor(step)</span><br><span class="line">			if(obj.offsetLeft&#x3D;&#x3D;target)&#123;</span><br><span class="line">				clearInterval(obj.timer)</span><br><span class="line">&#x2F;&#x2F;				if(callback)&#123;</span><br><span class="line">&#x2F;&#x2F;					callback()</span><br><span class="line">&#x2F;&#x2F;				&#125;</span><br><span class="line">				callback&amp;&amp;callback();</span><br><span class="line">			&#125;</span><br><span class="line">			obj.style.left&#x3D;obj.offsetLeft+step+&#39;px&#39;</span><br><span class="line">		&#125;,15)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>js运动</tag>
       </tags>
   </entry>
 </search>
