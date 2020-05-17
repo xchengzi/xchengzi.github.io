@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-16T13:50:57.570Z</updated>
+  <updated>2020-05-17T09:54:19.331Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu 下配置 SSH服务</title>
+    <link href="http://yoursite.com/2020/05/17/Ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-SSH%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://yoursite.com/2020/05/17/Ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-SSH%E6%9C%8D%E5%8A%A1/</id>
+    <published>2020-05-17T09:52:52.732Z</published>
+    <updated>2020-05-17T09:54:19.331Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装-SSH-中的遇到问题及解决"><a href="#安装-SSH-中的遇到问题及解决" class="headerlink" title="安装 SSH 中的遇到问题及解决"></a>安装 SSH 中的遇到问题及解决</h1><h2 id="遇到问题："><a href="#遇到问题：" class="headerlink" title="遇到问题："></a>遇到问题：</h2><p>​    <strong>使用指令</strong>  <code>sudo apt-get install openssh-server</code>  <strong>不能下载</strong></p><h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>​    <strong>可能是 apt-get 的源列表里边找不到想要的 openssh</strong></p><h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><a id="more"></a><ol><li><p>执行指令 <code>sudo apt-get update</code></p></li><li><p>再试一下指令 <code>sudo apt-get install openssh-server</code></p><p>会自动检索关联包  然后提示下载确认  输入：y   回车  等待自行下载安装。</p></li><li><p>最后输入  <code>sudo /etc/init.d/ssh start</code><br>或者输入  <code>sudo /etc/init.d/ssh resart</code></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;安装-SSH-中的遇到问题及解决&quot;&gt;&lt;a href=&quot;#安装-SSH-中的遇到问题及解决&quot; class=&quot;headerlink&quot; title=&quot;安装 SSH 中的遇到问题及解决&quot;&gt;&lt;/a&gt;安装 SSH 中的遇到问题及解决&lt;/h1&gt;&lt;h2 id=&quot;遇到问题：&quot;&gt;&lt;a href=&quot;#遇到问题：&quot; class=&quot;headerlink&quot; title=&quot;遇到问题：&quot;&gt;&lt;/a&gt;遇到问题：&lt;/h2&gt;&lt;p&gt;​    &lt;strong&gt;使用指令&lt;/strong&gt;  &lt;code&gt;sudo apt-get install openssh-server&lt;/code&gt;  &lt;strong&gt;不能下载&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;原因：&quot;&gt;&lt;a href=&quot;#原因：&quot; class=&quot;headerlink&quot; title=&quot;原因：&quot;&gt;&lt;/a&gt;原因：&lt;/h2&gt;&lt;p&gt;​    &lt;strong&gt;可能是 apt-get 的源列表里边找不到想要的 openssh&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;解决：&quot;&gt;&lt;a href=&quot;#解决：&quot; class=&quot;headerlink&quot; title=&quot;解决：&quot;&gt;&lt;/a&gt;解决：&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>解决Ubuntu14.04联网问题</title>
