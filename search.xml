@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ubuntu下进行文件编码转换</title>
+    <url>/2020/05/23/Ubuntu%E4%B8%8B%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h1 id="如将文件转为UTF8格式"><a href="#如将文件转为UTF8格式" class="headerlink" title="如将文件转为UTF8格式"></a>如将文件转为UTF8格式</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><pre><code>sudo apt-get install enca</code></pre><h2 id="2-转换"><a href="#2-转换" class="headerlink" title="2.转换"></a>2.转换</h2><p><strong>命令格式如下</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca -L  当前语言  -x  目标编码  文件名</span><br></pre></td></tr></table></figure>
+
+<p><strong>例如：要把当前目录下的所有文件都转成<code>utf-8</code></strong></p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *</span><br></pre></td></tr></table></figure>
+
+<p><strong>将当前文件夹的所有C文件全部转成utf-8编码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *.c</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 下配置 SSH服务</title>
+    <url>/2020/05/17/Ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-SSH%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<h1 id="安装-SSH-中的遇到问题及解决"><a href="#安装-SSH-中的遇到问题及解决" class="headerlink" title="安装 SSH 中的遇到问题及解决"></a>安装 SSH 中的遇到问题及解决</h1><h2 id="遇到问题："><a href="#遇到问题：" class="headerlink" title="遇到问题："></a>遇到问题：</h2><p>​    <strong>使用指令</strong>  <code>sudo apt-get install openssh-server</code>  <strong>不能下载</strong></p>
+<h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>​    <strong>可能是 apt-get 的源列表里边找不到想要的 openssh</strong></p>
+<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><a id="more"></a>
+
+<ol>
+<li><p>执行指令 <code>sudo apt-get update</code></p>
+</li>
+<li><p>再试一下指令 <code>sudo apt-get install openssh-server</code></p>
+<p>会自动检索关联包  然后提示下载确认  输入：y   回车  等待自行下载安装。</p>
+</li>
+<li><p>最后输入  <code>sudo /etc/init.d/ssh start</code><br>或者输入  <code>sudo /etc/init.d/ssh resart</code></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>javascript缓动动画js代码</title>
     <url>/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/</url>
     <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
@@ -20,6 +66,37 @@
       </categories>
       <tags>
         <tag>js运动</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进程同步、互斥、异步</title>
+    <url>/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="同步、互斥、异步"><a href="#同步、互斥、异步" class="headerlink" title="同步、互斥、异步"></a>同步、互斥、异步</h1><h2 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h2><p>​            <strong>并发进程之间的制约关系有两种，即互斥和同步</strong></p>
+<ul>
+<li>互斥</li>
+</ul>
+<blockquote>
+<p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p>
+</blockquote>
+<ul>
+<li>同步</li>
+</ul>
+<blockquote>
+<p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><blockquote>
+<p>异步与同步是相对的：</p>
+<p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p>
+<p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>操作系统原理</category>
+      </categories>
+      <tags>
+        <tag>进程</tag>
       </tags>
   </entry>
   <entry>
@@ -62,61 +139,6 @@
       </categories>
       <tags>
         <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 下配置 SSH服务</title>
-    <url>/2020/05/17/Ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-SSH%E6%9C%8D%E5%8A%A1/</url>
-    <content><![CDATA[<h1 id="安装-SSH-中的遇到问题及解决"><a href="#安装-SSH-中的遇到问题及解决" class="headerlink" title="安装 SSH 中的遇到问题及解决"></a>安装 SSH 中的遇到问题及解决</h1><h2 id="遇到问题："><a href="#遇到问题：" class="headerlink" title="遇到问题："></a>遇到问题：</h2><p>​    <strong>使用指令</strong>  <code>sudo apt-get install openssh-server</code>  <strong>不能下载</strong></p>
-<h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>​    <strong>可能是 apt-get 的源列表里边找不到想要的 openssh</strong></p>
-<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><a id="more"></a>
-
-<ol>
-<li><p>执行指令 <code>sudo apt-get update</code></p>
-</li>
-<li><p>再试一下指令 <code>sudo apt-get install openssh-server</code></p>
-<p>会自动检索关联包  然后提示下载确认  输入：y   回车  等待自行下载安装。</p>
-</li>
-<li><p>最后输入  <code>sudo /etc/init.d/ssh start</code><br>或者输入  <code>sudo /etc/init.d/ssh resart</code></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>进程同步、互斥、异步</title>
-    <url>/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="同步、互斥、异步"><a href="#同步、互斥、异步" class="headerlink" title="同步、互斥、异步"></a>同步、互斥、异步</h1><h2 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h2><p>​            <strong>并发进程之间的制约关系有两种，即互斥和同步</strong></p>
-<ul>
-<li>互斥</li>
-</ul>
-<blockquote>
-<p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p>
-</blockquote>
-<ul>
-<li>同步</li>
-</ul>
-<blockquote>
-<p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><blockquote>
-<p>异步与同步是相对的：</p>
-<p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p>
-<p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>操作系统原理</category>
-      </categories>
-      <tags>
-        <tag>进程</tag>
       </tags>
   </entry>
 </search>

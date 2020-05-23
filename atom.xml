@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-17T09:54:19.331Z</updated>
+  <updated>2020-05-23T12:47:35.433Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu下进行文件编码转换</title>
+    <link href="http://yoursite.com/2020/05/23/Ubuntu%E4%B8%8B%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://yoursite.com/2020/05/23/Ubuntu%E4%B8%8B%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2/</id>
+    <published>2020-05-23T12:48:07.744Z</published>
+    <updated>2020-05-23T12:47:35.433Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如将文件转为UTF8格式"><a href="#如将文件转为UTF8格式" class="headerlink" title="如将文件转为UTF8格式"></a>如将文件转为UTF8格式</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><pre><code>sudo apt-get install enca</code></pre><h2 id="2-转换"><a href="#2-转换" class="headerlink" title="2.转换"></a>2.转换</h2><p><strong>命令格式如下</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enca -L  当前语言  -x  目标编码  文件名</span><br></pre></td></tr></table></figure><p><strong>例如：要把当前目录下的所有文件都转成<code>utf-8</code></strong></p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *</span><br></pre></td></tr></table></figure><p><strong>将当前文件夹的所有C文件全部转成utf-8编码：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *.c</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;如将文件转为UTF8格式&quot;&gt;&lt;a href=&quot;#如将文件转为UTF8格式&quot; class=&quot;headerlink&quot; title=&quot;如将文件转为UTF8格式&quot;&gt;&lt;/a&gt;如将文件转为UTF8格式&lt;/h1&gt;&lt;h2 id=&quot;1-安装&quot;&gt;&lt;a href=&quot;#1-安装&quot; class=&quot;headerlink&quot; title=&quot;1.安装&quot;&gt;&lt;/a&gt;1.安装&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install enca&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;2-转换&quot;&gt;&lt;a href=&quot;#2-转换&quot; class=&quot;headerlink&quot; title=&quot;2.转换&quot;&gt;&lt;/a&gt;2.转换&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;命令格式如下&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;enca -L  当前语言  -x  目标编码  文件名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;例如：要把当前目录下的所有文件都转成&lt;code&gt;utf-8&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu 下配置 SSH服务</title>
