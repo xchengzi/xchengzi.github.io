@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ubuntu下进行文件编码转换</title>
-    <url>/2020/05/23/Ubuntu%E4%B8%8B%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<h1 id="如将文件转为UTF8格式"><a href="#如将文件转为UTF8格式" class="headerlink" title="如将文件转为UTF8格式"></a>如将文件转为UTF8格式</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><pre><code>sudo apt-get install enca</code></pre><h2 id="2-转换"><a href="#2-转换" class="headerlink" title="2.转换"></a>2.转换</h2><p><strong>命令格式如下</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca -L  当前语言  -x  目标编码  文件名</span><br></pre></td></tr></table></figure>
-
-<p><strong>例如：要把当前目录下的所有文件都转成<code>utf-8</code></strong></p>
-<a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *</span><br></pre></td></tr></table></figure>
-
-<p><strong>将当前文件夹的所有C文件全部转成utf-8编码：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *.c</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ubuntu 下配置 SSH服务</title>
     <url>/2020/05/17/Ubuntu-%E4%B8%8B%E9%85%8D%E7%BD%AE-SSH%E6%9C%8D%E5%8A%A1/</url>
     <content><![CDATA[<h1 id="安装-SSH-中的遇到问题及解决"><a href="#安装-SSH-中的遇到问题及解决" class="headerlink" title="安装 SSH 中的遇到问题及解决"></a>安装 SSH 中的遇到问题及解决</h1><h2 id="遇到问题："><a href="#遇到问题：" class="headerlink" title="遇到问题："></a>遇到问题：</h2><p>​    <strong>使用指令</strong>  <code>sudo apt-get install openssh-server</code>  <strong>不能下载</strong></p>
@@ -47,6 +25,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Servlet中get和post的区别</title>
+    <url>/2020/07/17/Servlet%E4%B8%ADget%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="get请求和post的请求的区别"><a href="#get请求和post的请求的区别" class="headerlink" title="get请求和post的请求的区别"></a>get请求和post的请求的区别</h2><ol>
+<li><p><strong>从安全的角度来说，post要比get相对安全，但不是绝对安全。</strong></p>
+<blockquote>
+<p><strong>get</strong>会将请求参数值直接写在资源<strong>路径</strong>后面<br><strong>post</strong>则是将请求参数放在<strong>请求数据包的实体</strong>内容里面  </p>
+</blockquote>
+</li>
+<li><p><strong>从提交数据的大小来看，post提交的数据要大于get。</strong></p>
+<blockquote>
+<p><strong>get</strong>提交的数据类型只能是<strong>字符串类型</strong>，不能是图片，视屏等等大容量数据，提交的数据大小不能超过<strong>4kb</strong>。</p>
+<p><strong>post</strong>没有此限制，可以提交大量的数据。</p>
+</blockquote>
+<a id="more"></a>
+</li>
+<li><p><strong>从处理数据的效率来说。get处理请求的效率要高于post请求 。</strong> </p>
+</li>
+</ol>
+<h2 id="解决浏览器绘画服务器出现的中文乱码问题"><a href="#解决浏览器绘画服务器出现的中文乱码问题" class="headerlink" title="解决浏览器绘画服务器出现的中文乱码问题"></a>解决浏览器绘画服务器出现的中文乱码问题</h2><h3 id="出现乱码原因"><a href="#出现乱码原因" class="headerlink" title="出现乱码原因"></a>出现乱码原因</h3><ul>
+<li>因为编码和解码的字符集编码不一致  </li>
+</ul>
+<h3 id="解决（-看提交方式为get还是post-）"><a href="#解决（-看提交方式为get还是post-）" class="headerlink" title="解决（ 看提交方式为get还是post ）"></a>解决（ 看提交方式为get还是post ）</h3><h4 id="post："><a href="#post：" class="headerlink" title="post："></a>post：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">"utf8"</span>);  </span><br><span class="line">response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="get"><a href="#get" class="headerlink" title="get:"></a>get:</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">name=<span class="keyword">new</span> String(name.getBytes(<span class="string">"iso8859-1"</span>),<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>javaweb</category>
+      </categories>
+      <tags>
+        <tag>Servlet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>javascript缓动动画js代码</title>
     <url>/2020/04/22/javascript%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BBjs%E4%BB%A3%E7%A0%81/</url>
     <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
@@ -66,82 +80,6 @@
       </categories>
       <tags>
         <tag>js运动</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>进程同步、互斥、异步</title>
-    <url>/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="同步、互斥、异步"><a href="#同步、互斥、异步" class="headerlink" title="同步、互斥、异步"></a>同步、互斥、异步</h1><h2 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h2><p>​            <strong>并发进程之间的制约关系有两种，即互斥和同步</strong></p>
-<ul>
-<li>互斥</li>
-</ul>
-<blockquote>
-<p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p>
-</blockquote>
-<ul>
-<li>同步</li>
-</ul>
-<blockquote>
-<p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><blockquote>
-<p>异步与同步是相对的：</p>
-<p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p>
-<p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>操作系统原理</category>
-      </categories>
-      <tags>
-        <tag>进程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决Ubuntu14.04联网问题</title>
-    <url>/2020/05/16/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="Ubuntu14-04-不能上网解决方法之一"><a href="#Ubuntu14-04-不能上网解决方法之一" class="headerlink" title="Ubuntu14.04 不能上网解决方法之一"></a>Ubuntu14.04 不能上网解决方法之一</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><pre><code>su root</code></pre><ul>
-<li>输入密码后 获得管理员权限</li>
-</ul>
-<p><img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-01.png" alt=""></p>
-<a id="more"></a>
-
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><pre><code>vi etc/NetworkManager/Networkmanager.conf</code></pre><ul>
-<li><p>按<code>i</code> (或者<code>a</code>、<code>o</code>) 进入编辑模式</p>
-</li>
-<li><p>修改  <code>managed=true</code></p>
-</li>
-<li><p>按键按 <code>Esc</code></p>
-</li>
-<li><p>退出编辑模式  键盘输入<code>:wq</code> 即可保存并退出</p>
-<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-02.png" alt="图2"></p>
-</li>
-</ul>
-<p>  ​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-03.png" alt="图3"></p>
-<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><pre><code>vi etc/network/interfaces</code></pre><ul>
-<li>将 <code>static</code> 修改为 <code>dhcp</code></li>
-</ul>
-<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-04.png" alt="图4"><br>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-05.png" alt="图5"></p>
-<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><ul>
-<li><p>重启客户端</p>
-</li>
-<li><p>指令 <code>reboot</code></p>
-</li>
-</ul>
-<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><ul>
-<li><p>打开浏览器 输入网址 回车</p>
-<p><strong>大功告成！！！</strong></p>
-</li>
-</ul>
-<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-06.png" alt="图6"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -535,6 +473,104 @@
       </categories>
       <tags>
         <tag>块级、行内元素</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu下进行文件编码转换</title>
+    <url>/2020/05/23/Ubuntu%E4%B8%8B%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h1 id="如将文件转为UTF8格式"><a href="#如将文件转为UTF8格式" class="headerlink" title="如将文件转为UTF8格式"></a>如将文件转为UTF8格式</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><pre><code>sudo apt-get install enca</code></pre><h2 id="2-转换"><a href="#2-转换" class="headerlink" title="2.转换"></a>2.转换</h2><p><strong>命令格式如下</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca -L  当前语言  -x  目标编码  文件名</span><br></pre></td></tr></table></figure>
+
+<p><strong>例如：要把当前目录下的所有文件都转成<code>utf-8</code></strong></p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *</span><br></pre></td></tr></table></figure>
+
+<p><strong>将当前文件夹的所有C文件全部转成utf-8编码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enca  -L  zh_CN  -x  utf-8  *.c</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决Ubuntu14.04联网问题</title>
+    <url>/2020/05/16/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Ubuntu14-04-不能上网解决方法之一"><a href="#Ubuntu14-04-不能上网解决方法之一" class="headerlink" title="Ubuntu14.04 不能上网解决方法之一"></a>Ubuntu14.04 不能上网解决方法之一</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><pre><code>su root</code></pre><ul>
+<li>输入密码后 获得管理员权限</li>
+</ul>
+<p><img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-01.png" alt=""></p>
+<a id="more"></a>
+
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><pre><code>vi etc/NetworkManager/Networkmanager.conf</code></pre><ul>
+<li><p>按<code>i</code> (或者<code>a</code>、<code>o</code>) 进入编辑模式</p>
+</li>
+<li><p>修改  <code>managed=true</code></p>
+</li>
+<li><p>按键按 <code>Esc</code></p>
+</li>
+<li><p>退出编辑模式  键盘输入<code>:wq</code> 即可保存并退出</p>
+<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-02.png" alt="图2"></p>
+</li>
+</ul>
+<p>  ​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-03.png" alt="图3"></p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><pre><code>vi etc/network/interfaces</code></pre><ul>
+<li>将 <code>static</code> 修改为 <code>dhcp</code></li>
+</ul>
+<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-04.png" alt="图4"><br>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-05.png" alt="图5"></p>
+<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><ul>
+<li><p>重启客户端</p>
+</li>
+<li><p>指令 <code>reboot</code></p>
+</li>
+</ul>
+<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><ul>
+<li><p>打开浏览器 输入网址 回车</p>
+<p><strong>大功告成！！！</strong></p>
+</li>
+</ul>
+<p>​    <img src="/pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98pic/%E8%A7%A3%E5%86%B3Ubuntu14.04%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98-06.png" alt="图6"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进程同步、互斥、异步</title>
+    <url>/2020/04/20/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E3%80%81%E4%BA%92%E6%96%A5%E3%80%81%E5%BC%82%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="同步、互斥、异步"><a href="#同步、互斥、异步" class="headerlink" title="同步、互斥、异步"></a>同步、互斥、异步</h1><h2 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h2><p>​            <strong>并发进程之间的制约关系有两种，即互斥和同步</strong></p>
+<ul>
+<li>互斥</li>
+</ul>
+<blockquote>
+<p>多个并发进程之间，因竞争使用临界资源而互相排斥执行的间接制约关系，叫作互斥。</p>
+</blockquote>
+<ul>
+<li>同步</li>
+</ul>
+<blockquote>
+<p>在某些地方，多个并发进程需要相互等待或交换信息而产生的直接制约关系，叫做同步。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><blockquote>
+<p>异步与同步是相对的：</p>
+<p>同步是顺序执行进程，执行完一个进程再执行下一个进程，需要进程之间等待、协调运行；</p>
+<p>异步是进程之间彼此独立，在等待其他进程的运行时，本进程继续做自己的事，不需要等待其他进程完成后再工作。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>操作系统原理</category>
+      </categories>
+      <tags>
+        <tag>进程</tag>
       </tags>
   </entry>
 </search>
